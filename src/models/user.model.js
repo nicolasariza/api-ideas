@@ -3,9 +3,9 @@ const { Schema } = mongoose;
 const { compareSync, hashSync, genSaltSync } = require('bcryptjs');
 
 const UserSchema = new Schema({
-    name:{type:String, required=true},
-    username:{type:String, required=true},
-    password:{type=String, required=true}
+    name:{type:String, required:true},
+    username:{type:String, required:true},
+    password:{type:String, required:true}
 })
 
 // Para no mostrar la contraseña al devolver la informacion al cliente
