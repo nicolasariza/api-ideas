@@ -35,7 +35,7 @@ class IdeaController {
         return res.send(deletedIdea);
     }
 
-    async gerUserIdeas(req, res){
+    async getUserIdeas(req, res){
         const { userId } = req.params;
         const ideas = await _ideaService.getUserIdeas(userId);
         return res.send(ideas); 

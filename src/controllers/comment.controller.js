@@ -2,7 +2,7 @@ let _commentService = null;
 
 class CommentController {
     constructor({ CommentService }){
-        _commentService = IdeaService;
+        _commentService = CommentService;
     }
 
     async get(req, res){
@@ -24,16 +24,16 @@ class CommentController {
         return res.send(deletedComment);
     }
 
-    async getIdeasComment(req, res){
+    async getIdeaComments(req, res){
         const { ideaId } = req.params;
-        const comments = await _commentService.getIdeasComment(ideaId);
+        const comments = await _commentService.getIdeaComments(ideaId);
         res.send(comments);
     }
 
     async createComment(req, res){
         const { body } = req;
         const { ideaId } = req.params;
-        const createdComment = await _commentService.createdComment(body, ideaId);
+        const createdComment = await _commentService.createComment(body, ideaId);
         return res.status(201).send(createdComment); 
     }
 }
